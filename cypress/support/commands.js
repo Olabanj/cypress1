@@ -36,3 +36,6 @@ Cypress.Commands.add('login', (email, password) => {
     cy.get('.otp-cont > :nth-child(5)').type("6");
     cy.get('[data-test=sendOtpBtn]').click();
   });
+  Cypress.Commands.add('clickButton',()=>{
+    CarPage.getCarLink().click()
+  })

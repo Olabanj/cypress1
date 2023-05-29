@@ -30,7 +30,8 @@ describe("Car test ", () => {
       cy.visit(user.lgnurl_01);
       cy.login(genData.email, genData.Password); // define the cy.login() function
       //car link
-      CarPage.getCarLink().click()
+      cy.clickButton()
+     // CarPage.getCarLink().click()
       CarPage.getNavlink().contains("Create listing")
       CarPage.getHostLink().click()
       //Location details 
@@ -48,7 +49,6 @@ describe("Car test ", () => {
       cy.wait(2000);
       CarPage.getCarVinInfo().should("include.text","#VIN");
       CarPage.getCarVinLoc().click();
-      
       //car info
       CarPage.getCarMiles().click();
       CarPage.selCarMiles().click();
